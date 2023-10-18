@@ -1,0 +1,66 @@
+<app-nav></app-nav>
+
+<div *ngIf="loading; else popMoives">
+  <app-loading></app-loading>
+</div>
+
+<ng-template #popMoives>
+  <h1 style="margin-left: 20px;">Popular</h1>
+  <div class="row flex-nowrap overflow-auto" style="margin-left: 20px;">
+    <div
+      class="col"
+      *ngFor="let movie of popularMovies"
+      [routerLink]="'/details/' + movie.id"
+    >
+      <img
+        [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+        alt=""
+        height="150"
+      />
+      <p>{{ movie.title }}</p>
+      <p>{{ movie.id }}</p>
+    </div>
+  </div>
+</ng-template>
+
+<h1 style="margin-left: 20px;">Now Playing Moives</h1>
+
+<div class="row flex-nowrap overflow-auto" style="margin-left: 20px;">
+  <div class="col" *ngFor="let movie of nowplayingMovies">
+    <img
+      [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+      alt=""
+      height="150"
+    />
+    <p>{{ movie.title }}</p>
+  </div>
+</div>
+
+<br />
+
+<h1 style="margin-left: 20px;">Upcoming Movies</h1>
+<div class="row flex-nowrap overflow-auto" style="margin-left: 20px;">
+  <div class="col" *ngFor="let movie of upcomingMovies">
+    <img
+      [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+      alt=""
+      height="150"
+    />
+    <p>{{ movie.title }}</p>
+  </div>
+</div>
+
+<br />
+
+<h1 style="margin-left: 20px;">Top Rated Movies</h1>
+
+<div class="row flex-nowrap overflow-auto" style="margin-left: 20px;">
+  <div class="col" *ngFor="let movie of topratedMovies">
+    <img
+      [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+      alt=""
+      height="150"
+    />
+    <p>{{ movie.title }}</p>
+  </div>
+</div>

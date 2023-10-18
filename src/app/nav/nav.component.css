@@ -1,0 +1,58 @@
+/* #toggle {
+    position: relative;
+    display: block;
+    width: 170px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #222;
+    transition: 0.5s;
+    cursor: pointer;
+    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+                inset 0 8px 8px rgba(0, 0, 0, 0.1),
+                inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 5px;
+    background: linear-gradient(to bottom,#444,#222);
+    border: 0;
+    border-radius: 50%;
+    transform: scale(0.9);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5),
+                inset 0 4px 4px rgba(255, 255, 255, 0.2),
+                inset 0 -4px 4px rgba(255, 255, 255, 0.2);
+    transition: 0.5s;
+} */
+
+/* .active {
+    color: #007bff;
+} */
+
+.fa-sun {
+    color: rgb(177, 173, 173);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.fa-sun:hover{
+    color: #f7931d;
+    transform: scale(1.05);
+}
+
+
+.fa-moon {
+    color: rgb(177, 173, 173);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.fa-moon:hover{
+    color: #508ed7;
+    transform: scale(1.05);
+}
