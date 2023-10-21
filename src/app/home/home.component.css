@@ -1,6 +1,6 @@
-img{
+.rem-img{
     transition: 0.5s;
 }
-img:hover {
-    transform: scale(1.1);
+.rem-img:hover {
+    transform: scale(1.04);
 }

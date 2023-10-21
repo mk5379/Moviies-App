@@ -12,13 +12,19 @@
       *ngFor="let movie of popularMovies"
       [routerLink]="'/details/' + movie.id"
     >
+    <div class="card text-bg-primary rem-img" style="width: 18rem;height: 24rem;">
       <img
-        [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
-        alt=""
-        height="150"
+      [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+      alt=""
+      height="220"
       />
-      <p>{{ movie.title }}</p>
-      <p>{{ movie.id }}</p>
+      <div class="card-body">
+        <h5 class="card-title" style="margin-bottom: 10px;">{{ movie.title }}</h5>
+        <!-- <p class="card-text">{{movie.overview}}</p> -->
+        <p>Popularity - {{movie.popularity}} ⭐️</p>
+        <a href="#" class="btn btn-danger">Watch</a>
+      </div>
+    </div>
     </div>
   </div>
 </ng-template>
@@ -27,12 +33,19 @@
 
 <div class="row flex-nowrap overflow-auto" style="margin-left: 20px;">
   <div class="col" *ngFor="let movie of nowplayingMovies">
-    <img
+    <div class="card text-bg-primary rem-img" style="width: 18rem;height: 25rem;">
+      <img
       [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
       alt=""
-      height="150"
-    />
-    <p>{{ movie.title }}</p>
+      height="220"
+      />
+      <div class="card-body">
+        <h5 class="card-title" style="margin-bottom: 10px;">{{ movie.title }}</h5>
+        <!-- <p class="card-text">{{movie.overview}}</p> -->
+        <p>Popularity - {{movie.popularity}} ⭐️</p>
+        <a href="#" class="btn btn-danger">Watch</a>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -41,12 +54,19 @@
 <h1 style="margin-left: 20px;">Upcoming Movies</h1>
 <div class="row flex-nowrap overflow-auto" style="margin-left: 20px;">
   <div class="col" *ngFor="let movie of upcomingMovies">
-    <img
+    <div class="card text-bg-primary rem-img" style="width: 18rem;height: 24rem;">
+      <img
       [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
       alt=""
-      height="150"
-    />
-    <p>{{ movie.title }}</p>
+      height="220"
+      />
+      <div class="card-body">
+        <h5 class="card-title" style="margin-bottom: 10px;">{{ movie.title }}</h5>
+        <!-- <p class="card-text">{{movie.overview}}</p> -->
+        <p>Popularity - {{movie.popularity}} ⭐️</p>
+        <a href="#" class="btn btn-danger">Watch</a>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -56,11 +76,18 @@
 
 <div class="row flex-nowrap overflow-auto" style="margin-left: 20px;">
   <div class="col" *ngFor="let movie of topratedMovies">
-    <img
+    <div class="card text-bg-primary rem-img" style="width: 18rem;height: 25rem;">
+      <img
       [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
       alt=""
-      height="150"
-    />
-    <p>{{ movie.title }}</p>
+      height="220"
+      />
+      <div class="card-body">
+        <h5 class="card-title" style="margin-bottom: 10px;">{{ movie.title }}</h5>
+        <!-- <p class="card-text">{{movie.overview}}</p> -->
+        <p>Popularity - {{movie.popularity}} ⭐️</p>
+        <a href="#" class="btn btn-danger">Watch</a>
+      </div>
+    </div>
   </div>
 </div>

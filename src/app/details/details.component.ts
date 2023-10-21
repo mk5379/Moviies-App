@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../services/api.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-details',
@@ -14,10 +14,44 @@ export class DetailsComponent {
     private activatedRoute: ActivatedRoute,
     private Api: ApiService
   ) { }
+
   movieId: String = '';
+  casts = []
+  movies: any ={}
+  recommendMovies : any = []
+
   ngOnInit() {
     this.movieId = this.activatedRoute.snapshot.params['id'];
-    
+
+    this.Api.getCasts(this.movieId).subscribe({
+      next: (data : any) => {
+        console.log(data)
+        this.casts = data['cast']
+      },
+      error: (err: HttpErrorResponse) => {
+        console.log(err)
+      }
+    })
+
+    this.Api.getMovieDetail(this.movieId).subscribe({
+      next: (data : any) => {
+        console.log(data)
+        this.movies = data
+      },
+      error: (err: HttpErrorResponse) => {
+        console.log(err)
+      }
+    })
+
+    this.Api.getMovieRecommend(this.movieId).subscribe({
+      next: (data : any) => {
+        console.log(data)
+        this.recommendMovies = data.results
+      },
+      error: (err: HttpErrorResponse) => {
+        console.log(err)
+      }
+    })
   }
 
 }

@@ -17,8 +17,13 @@ export class ApiService {
 
   }
 
-  getMovie(name: String) {
-    return this.http.get(`http://api.themoviedb.org/3/${name}/453395/credits?api_key=050c28541f900007285c3020069bfd62`); // observable
+  getMovieDetail(movieId: String) {
+    return this.http.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=050c28541f900007285c3020069bfd62`); // observable
+
+  }
+  
+  getMovieRecommend(movieId: String) {
+    return this.http.get(`https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=050c28541f900007285c3020069bfd62`); // observable
 
   }
 }
