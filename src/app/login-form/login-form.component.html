@@ -1,1 +1,30 @@
-<p>login-form works!</p>
+<div class="bg-img">
+    <div class="container bg-img form">
+        <form [formGroup]="LoginForm" (ngSubmit)="login()" class="form-control ">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" name="username" id="username" class="form-control" formControlName = 'username'>
+            <span
+                *ngIf="LoginForm.get('username')?.errors?.['required'] && LoginForm.get('username')?.touched"
+            >Invalid Username</span>
+
+            <span
+                *ngIf="LoginForm.get('username')?.errors?.['email'] && LoginForm.get('username')?.touched"
+            >Enter E-mail format like ___@gmail.com</span>
+            <br>
+    
+            <label for="password" class="form-label">password:</label>
+            <input type="password" name="password" id="password" class="form-control" formControlName = 'password'>
+            <span
+                *ngIf="LoginForm.controls['password'].errors?.['required'] && LoginForm.controls['password']?.touched"
+            >Enter your password</span>
+            <span
+            *ngIf="LoginForm.controls['password'].errors?.['minlength'] && LoginForm.controls['password']?.touched"
+            >Your password must be at least 5 character</span>
+            <br>
+    
+            <button class="btn btn-outline-primary" type="submit" [disabled]="!LoginForm.valid">Register</button>
+        </form>
+    </div> 
+    
+</div>
+

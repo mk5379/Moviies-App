@@ -10,10 +10,15 @@ const routes: Routes = [
     path: '',
     component: HomeComponent
   },
+
+  {
+    path: 'home',
+    component: HomeComponent
+  },
   {
     path: "details/:id",
     component: DetailsComponent
-  }, 
+  },
   {
     path: 'register-form',
     component: RegisterFormComponent

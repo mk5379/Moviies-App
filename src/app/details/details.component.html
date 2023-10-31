@@ -1,16 +1,72 @@
-<p>details works!</p>
-
-<h1>{{ movies["original_title"] }}</h1>
-<img [src]="'https://image.tmdb.org/t/p/w500' + movies['backdrop_path']">
-
-
-<div *ngFor="let cast of casts">
-    <p> {{ cast['character']}}</p>
-    <p> {{ cast['original_name']}}</p>
-    <img 
-    class="circle-profile"
-    [src]="'https://image.tmdb.org/t/p/w500' + cast['profile_path']"
-    alt=""
-    height="150">
+<app-nav></app-nav>
+<div>
+    <img [src]="'https://image.tmdb.org/t/p/original' + movies['backdrop_path']" class="bg-img">
     
 </div>
+
+
+<!-- casts  -->
+<div class="container-fluid" >
+    
+   <div>
+        <div class="row">
+            <button class="btn btn-outline-primary" style="margin-top: -650px;"><i class="fa-solid fa-circle-left"></i>   Back</button>
+            <div style="z-index: 1;margin-top: 50px;">                
+                <div style="margin-top: -10px;">
+                    <div class="d-flex">
+                        <div class="col-5">
+                            <img class="img-1" [src]="'https://image.tmdb.org/t/p/w500' + movies['backdrop_path']">
+                        </div>
+                        <div class="col-7"style="color: white;;margin-top: 10px;">
+                            <h1>{{movies.original_title}}</h1>
+                            <h5 style="letter-spacing: 5px;line-height: 30px;text-overflow: ellipsis;white-space: nowrap;
+                            overflow: hidden;">{{movies.overview}}</h5>
+                            <h4 style="color: #007bff;">Distributed by ---- company at {{ movies.release_date }}.</h4>
+                            <br>
+                            <button style="letter-spacing: 1px;" class="btn btn-primary">Watch Trailer</button>
+                        </div>
+                    </div>
+                </div>
+                <div style="color: white;margin-left: 20px; text-align: center;margin-bottom: 20px;margin-top: 10px;">
+                    <h3>The actors and actress of this movie are the folowing below.</h3>
+                </div>
+                <div class="d-flex flex-nowrap overflow-auto">
+                    <div *ngFor="let cast of casts"style="margin-left: 20px;">
+                        <img 
+                            class="circle-profile"
+                            [src]="'https://image.tmdb.org/t/p/w500' + cast['profile_path']"
+                            alt=""
+                        height="150">
+                        <!-- <p style="text-align: center;color: white;">{{ cast['character'] }}</p> -->
+                        <p style="text-align: center;font-weight:bold ;color: #fff;">{{ cast['original_name'] }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+</div>
+
+<div class="recommended">
+    <h3>Recommended Movies</h3>
+    <div class="d-flex flex-nowrap overflow-auto">
+        <div class="col mb-4" style="margin-left: 20px;" *ngFor="let movie of recommendMovies">
+            <div class="card text-bg-danger rem-img" style="width: 18rem;height: 23rem;">
+                <img
+                [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+                alt=""
+                height="200"
+                />
+                <div class="card-body">
+                  <h5 class="card-title" style="margin-bottom: 10px;">{{ movie.title }}</h5>
+                  <!-- <p class="card-text">{{movie.overview}}</p> -->
+                  <p>Popularity - {{movie.popularity}} ⭐️</p>
+                  <a href="#" class="btn btn-primary">Watch</a>
+                </div>
+            </div>
+          </div>
+    </div>
+</div>
+
+
+
+

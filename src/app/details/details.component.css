@@ -1,0 +1,48 @@
+.circle-profile{
+    width: 100px;
+    height: 100px;
+    border: 5px solid #007bff;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.circle-profile:hover {
+    transform: scale(1.05);
+}
+
+.bg-img{
+    position: absolute;
+    opacity: 0.9;
+    z-index: 0;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 13px;
+}
+
+.img-1{
+    width: 500px;
+    margin-left: 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.img-1:hover {
+    transform: scale(1.05);
+}
+
+.recommended {
+    position: relative;
+    background-color: black;
+    color: white;
+    
+}
+
+.rem-img{
+    transition: 0.5s;
+}
+
+.rem-img:hover {
+    transform: scale(1.05);
+}

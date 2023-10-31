@@ -14,31 +14,41 @@ export class DetailsComponent {
     private activatedRoute: ActivatedRoute,
     private Api: ApiService
   ) { }
-  
-  movieId: String = '';
-  casts = [];
-  movies : any = {};
 
+  movieId: String = '';
+  casts = []
+  movies: any ={}
+  recommendMovies : any = []
 
   ngOnInit() {
     this.movieId = this.activatedRoute.snapshot.params['id'];
 
     this.Api.getCasts(this.movieId).subscribe({
-      next : (data : any) => {
-        console.log(data),
+      next: (data : any) => {
+        console.log(data)
         this.casts = data['cast']
       },
-      error: (err:HttpErrorResponse) => {
+      error: (err: HttpErrorResponse) => {
         console.log(err)
       }
     })
 
     this.Api.getMovieDetail(this.movieId).subscribe({
-      next : (data : any) => {
-        console.log(data),
+      next: (data : any) => {
+        console.log(data)
         this.movies = data
       },
-      error: (err : HttpErrorResponse) => {
+      error: (err: HttpErrorResponse) => {
+        console.log(err)
+      }
+    })
+
+    this.Api.getMovieRecommend(this.movieId).subscribe({
+      next: (data : any) => {
+        console.log(data)
+        this.recommendMovies = data.results
+      },
+      error: (err: HttpErrorResponse) => {
         console.log(err)
       }
     })

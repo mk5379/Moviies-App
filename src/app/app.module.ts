@@ -8,8 +8,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoadingComponent } from './loading/loading.component';
 import { DetailsComponent } from './details/details.component';
 import { NavComponent } from './nav/nav.component';
-import { RegisterFormComponent } from './register-form/register-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
+import { FormsModule } from '@angular/forms';
+import { SlideComponent } from './slide/slide.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +20,18 @@ import { LoginFormComponent } from './login-form/login-form.component';
     HomeComponent,
     LoadingComponent,
     DetailsComponent,
-    NavComponent,
+    LoginFormComponent,
     RegisterFormComponent,
-    LoginFormComponent
+    NavComponent,
+    SlideComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
